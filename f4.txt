@@ -1,30 +1,26 @@
-# Simple Calculator
+<!DOCTYPE html>
+<html>
+<head>
+<title>To Do List</title>
+</head>
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+<body>
 
-print("Choose operation:")
-print("1. Addition")
-print("2. Subtraction")
-print("3. Multiplication")
-print("4. Division")
+<h2>My To Do List</h2>
 
-choice = input("Enter choice (1/2/3/4): ")
+<input type="text" id="task">
+<button onclick="addTask()">Add</button>
 
-if choice == '1':
-    print("Result =", num1 + num2)
+<ul id="list"></ul>
 
-elif choice == '2':
-    print("Result =", num1 - num2)
+<script>
+function addTask(){
+let task=document.getElementById("task").value
+let li=document.createElement("li")
+li.innerText=task
+document.getElementById("list").appendChild(li)
+}
+</script>
 
-elif choice == '3':
-    print("Result =", num1 * num2)
-
-elif choice == '4':
-    if num2 != 0:
-        print("Result =", num1 / num2)
-    else:
-        print("Cannot divide by zero")
-
-else:
-    print("Invalid choice")
+</body>
+</html>
